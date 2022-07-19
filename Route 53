@@ -31,5 +31,58 @@ Here . is root of all domain
                
  
 How to DNS Work:
+
+I have an attahced an image regarding this :
+
+
+Now let's talk about Route 53 :
+
+Amazone Route 53 : A highly scalable , available, fully managed and authrortative DNS 
+   Here Authorartative means - we can update DNS records 
+Route 53 is also a domain registrar
+DNS port is 53
+
+in Route 53 we will be defining some of DNS records which define how you want to route the traffic for your domain.
+
+Records type :
+
+A - maps hostname into IP4
+AAA - maps hostname into IPV6 
+CNAME - maps hostname into another hostname
+NS - nameserver of the DNS zones
+
+
+Hosted Zones :
+
+A container  for records that define how to route traffic for a domain or its subdomain 
+Public hosted zones : container records that specify how to route traffic on the internet like application.com
+private hosted zones : container records that specify how you route the traffice within your VPC your virtual private cloud  like application.internal
+
+You pay $0.50 per month for hosted zones.
+
+Record TTL :
+
+Time to live : means if clinent is requestion for an example.com to DNS, DNS will revert this domain to IP address with TTL.
+Let's suppoese TTL is 300 seconds means client duration of 300 seconds will not query to DNS, it will take the address from it's itself.
+
+High TTL : 24 hours ->> less  traffic on route 53
+Low TTL : 60sec -->>  a lot more traffic on DNS , it will cost much beacuse it will charg how many request you are doing to route 53
+
+If we say TTL is for 120 seconds and access our domain through our web browser, it will aceess and TTL time will start to decrease as well.
+Meanwhile if we change the value of record of that particular domain, and try to access that domain again with new updation, it will not update until that TTL time
+doesn't stop and when TTL times end , it will again check and Now you can see your updation on browser.
+
+
+#############################
+
+CNAME and Alias
+
+CNAME : points an hostname to any other hostname 
+        only for NON Root domain 
+        
+Alias : points an hostname to an AWS resources ( app.domain.com => babla.amazonaws.com )
+        work for ROOT Domain as well NON-ROOT Domain 
+        Free of charge 
+
  
         
