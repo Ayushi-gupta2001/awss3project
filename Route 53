@@ -1,0 +1,35 @@
+###########################################################
+
+About Route 53
+
+What is DNS :
+
+Domain name systems , which transtalets hostnames to ip address for a human.
+www.google.com -->> 172.217.18.36 
+
+DNS is the backbone of the internet 
+DNS uses the hierarical naming structure like 
+
+                .com
+            demo.com
+        www.demo.com
+        
+DNS Registrar : Route 53, Godaddy -->> where you can find or register your domain or purchase your domain 
+DNS Records : A, CNAME, MX,TXT, NS
+DNS Zone : Where contain all the DNS Records, this is location where it shows how to match your hostname into ip
+Nameserver : That actually reoslve the DNS queries 
+TLD Domain : .com, .org, .gov, .us, .in
+SLD Second level domain: amazone.com, google.com
+FQDN Fully qualified Domain name : http://api.www.example.com.
+
+Here . is root of all domain 
+     .com - TLD
+     example.com - SLD 
+     www.example.com - subdomain
+ api.www.example.com - domain name 
+               http - protocol 
+               
+ 
+How to DNS Work:
+ 
+        
